@@ -119,7 +119,7 @@ client.addListener('message', async (from, to, message) => {
       if (userCount > 0) {
         client.notice(to, `${nickToCount} hat ${userCount} Mal moin gesagt.`);
       } else {
-        client.notice(to, `Der Nick ist nicht bekannt.`);
+        client.notice(to, `Der Nick ist nicht bekannt - schon mal ein 'moin' verlauten lassen?`);
       }
     }
   }
