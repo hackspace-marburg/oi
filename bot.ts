@@ -50,6 +50,7 @@ const ircConfig: irc.Config = {
 };
 
 const catchphrases = config.moin.variations;
+const utterances = config.moin.utterances
 
 const express = require('express');
 const apiApp = express();
@@ -121,7 +122,19 @@ client.addListener('message', async (from, to, message) => {
       } else {
         client.notice(to, `Der Nick ist nicht bekannt.`);
       }
-    }
+	}
+	  if (lowercaseMessage.startsWith('!graf')) {
+      const parts = message.split(' ');
+      const nickToCount = parts[1] || from;
+
+      const userCount = await getUserCatchphraseCount(to, nickToCount);
+      if (userCount > 0) {
+	    const lache = utterances[Math.floor (Math.random()*utterances.length)];
+        client.notice(to, `Graf Zahl: ${userCount}!!! ${lache} ${nickToCount} hat ${userCount} Mal moin gesagt.`);
+      } else {
+        client.notice(to, `Graf Zahl: Schon mal ein moin probiert?`);
+      }
+	}
   }
 });
 
