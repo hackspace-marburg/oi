@@ -5,6 +5,10 @@ moin:
     - 'niom'
     - 'noim'
     - 'mion'
+    - 'mino'
+    - 'moni'
+    - 'moinsen'
+
   allowedUsers:
     - 'moinbot'
     - 'oibot'
@@ -12,6 +16,15 @@ moin:
     - 'MOINbot'
     - 'OIbot'
     - 'moibot'
+
+  utterances:
+    - 'Jahahahaaa!!!'
+    - 'Muahahaha!!!'
+    - 'Potzblitz!'
+    - 'Fantastisch!'
+    - 'Hört hört!!!'
+    - 'Sapperlot!!'
+    - 'Hagel Blitz und Wolkenbruch!!!'
 
 irc:
   channels:
